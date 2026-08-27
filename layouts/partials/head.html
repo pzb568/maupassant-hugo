@@ -42,11 +42,18 @@
     <link rel="alternate icon" href='{{ "favicon.png" | relURL }}' type="image/svg+xml">
     
 
-    <!-- Preconnect to Google Fonts for faster font load -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Noto Sans SC (思源黑体) -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonts and typography -->
+    {{/* If params.typography is not set, default to loading Noto Sans SC */}}
+    {{ if or (not (isset .Site.Params "typography")) .Site.Params.typography.useNoto }}
+      <!-- Preconnect to Google Fonts for faster font load -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Preload stylesheet and apply onload to avoid render-blocking -->
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" as="style" onload="this.rel='stylesheet'">
+      <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+      </noscript>
+    {{ end }}
 
     <link rel="stylesheet" href='{{ "css/normalize.css" | relURL}}'>
     <link rel="stylesheet" href='{{ "css/style.css" | relURL }}'>
