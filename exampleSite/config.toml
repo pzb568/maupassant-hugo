@@ -35,6 +35,10 @@ disqusShortname = "yourdiscussshortname"  ## 是否开启disqus评论，不要�
   # 全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能
   toc = true  # 是否开启目录
 
+  ## Typography settings
+  [params.typography]
+    useNoto = true  # true: load Noto Sans SC webfont; false: use system fonts only
+
 ## 友情链接，可以多个
 
 [[params.links]]
