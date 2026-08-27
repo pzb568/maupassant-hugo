@@ -42,6 +42,12 @@
     <link rel="alternate icon" href='{{ "favicon.png" | relURL }}' type="image/svg+xml">
     
 
+    <!-- Preconnect to Google Fonts for faster font load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Noto Sans SC (思源黑体) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href='{{ "css/normalize.css" | relURL}}'>
     <link rel="stylesheet" href='{{ "css/style.css" | relURL }}'>
     {{ range .AlternativeOutputFormats -}}
