@@ -1,0 +1,10 @@
+/* override-typography.css — minimal fallback overrides to avoid font conflicts
+   This file is loaded after typography.css and style.css to ensure safe fallback
+*/
+body {
+  background-color: #FFF;
+  color: #444;
+  /* Defer primary typography to typography.css; provide safe system fallbacks here */
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+}
